@@ -58,3 +58,7 @@ sprint-01-semana-02:
 10. Revisão de Código e Merge de Pull Request
 
     - Revise um pull request, aprove ou solicite mudanças, e faça o merge na branch principal.
+
+### Principais Comando do Git aprendidos:
+
+> `git init`: Inicializa um novo repositório Git. <br> `git add`: Adiciona arquivos ao índice. <br> `git commit`: Registra mudanças no repositório. <br> `git push`: Envia os commits para o repositório remoto. <br> `git branch`: Gerencia branches. <br> `git checkout`: Muda entre branches. <br> `git merge`: Realiza a união de branches. <br> `git log`: Mostra todos os commits <br> `git reset`: Volta aos commits anteriores <br> `git status`: Mostra o status atual <br> `git rm`: Deleta arquivos <br> `git restore`: Restaura arquivos deletados <br> `git mv`: Renomeia arquivos <br> `git config`: Muda as configurações do git
