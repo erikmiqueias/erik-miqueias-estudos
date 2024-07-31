@@ -29,4 +29,5 @@ buttonImc.addEventListener("click", () => {
 
   weight.value = "";
   height.value = "";
+  //   calculadora de imc
 });
