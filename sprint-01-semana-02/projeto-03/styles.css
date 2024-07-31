@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
+}
+
+#container {
+  border: 1px solid #000;
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
