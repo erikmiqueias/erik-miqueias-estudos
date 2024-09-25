@@ -1,0 +1,27 @@
+{
+  "name": "sprint-05-semana-01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.7.0",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/validator": "^13.12.2",
+    "express": "^4.21.0",
+    "mongodb": "^6.9.0",
+    "validator": "^13.12.0"
+  }
+}
