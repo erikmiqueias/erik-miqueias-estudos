@@ -5,6 +5,6 @@ export interface IData {
   handle(): Promise<HttpResponse<Data[]>>;
 }
 
-export interface GetDataRepository {
+export interface IGetDataRepository {
   getData(): Promise<Data[]>;
 }

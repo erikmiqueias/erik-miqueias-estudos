@@ -1,8 +1,8 @@
-import { GetDataRepository } from "./protocols";
+import { IGetDataRepository } from "./protocols";
 import { IData } from "./protocols";
 
 export class GetDataController implements IData {
-  constructor(private readonly getDataRepository: GetDataRepository) {}
+  constructor(private readonly getDataRepository: IGetDataRepository) {}
   async handle() {
     try {
       const data = await this.getDataRepository.getData();
