@@ -1,5 +1,7 @@
+import { DeleteDataController } from "../controllers/delete-data/delete-data";
 import { GetDataController } from "../controllers/get-data/get-data";
 import { MongoPostDataController } from "../controllers/post-data/post-data";
+import { MongoDeleteDataRepository } from "../repositories/delete-data/mongo-delete-data";
 import { MongoGetDataRepository } from "../repositories/get-data/mongo-get-data";
 import { MongoPostDataRepository } from "../repositories/post-data/mongo-post-data";
 import express from "express";
@@ -24,6 +26,17 @@ async function routes(app: express.Application) {
     });
 
     res.status(statusCode).send(body);
+  });
+
+  app.delete("/data/:id", async (req, res) => {
+    const deleteDataRepository = new MongoDeleteDataRepository();
+    const deleteDataController = new DeleteDataController(deleteDataRepository);
+
+    const { body, statusCode } = await deleteDataController.handle({
+      params: req.params,
+    });
+
+    return res.status(statusCode).send(body);
   });
 }
 
