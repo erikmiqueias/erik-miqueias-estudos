@@ -5,6 +5,8 @@ import { MongoDeleteDataRepository } from "../repositories/delete-data/mongo-del
 import { MongoGetDataRepository } from "../repositories/get-data/mongo-get-data";
 import { MongoPostDataRepository } from "../repositories/post-data/mongo-post-data";
 import express from "express";
+import { MongoUpdateDataRepository } from "../repositories/update-data/mongo-update-data-repository";
+import { UpdateDataController } from "../controllers/update-data/update-data";
 
 async function routes(app: express.Application) {
   app.get("/data", async (req, res) => {
@@ -37,6 +39,18 @@ async function routes(app: express.Application) {
     });
 
     return res.status(statusCode).send(body);
+  });
+
+  app.patch("/data/:id", async (req, res) => {
+    const updateDataRepository = new MongoUpdateDataRepository();
+    const updateDataController = new UpdateDataController(updateDataRepository);
+
+    const { body, statusCode } = await updateDataController.handle({
+      body: req.body,
+      params: req.params,
+    });
+
+    res.status(statusCode).send(body);
   });
 }
 
