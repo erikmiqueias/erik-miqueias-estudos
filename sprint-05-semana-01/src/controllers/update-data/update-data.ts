@@ -26,7 +26,7 @@ export class UpdateDataController implements IUpdateDataController {
         (key) => !allowedFields.includes(key as keyof UpdateDataParams)
       );
 
-      if (!someFieldNotAllowedToUpdate) {
+      if (someFieldNotAllowedToUpdate) {
         return {
           statusCode: 400,
           body: "Some field is not allowed to update",
