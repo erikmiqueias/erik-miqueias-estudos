@@ -5,6 +5,7 @@ import {
   CreateDataParams,
   IPostDataController,
   IPostDataRepository,
+  searchURL,
 } from "./protocols";
 
 export class MongoPostDataController implements IPostDataController {
@@ -16,15 +17,14 @@ export class MongoPostDataController implements IPostDataController {
     params: HttpRequest<CreateDataParams>
   ): Promise<HttpResponse<Data>> {
     try {
-      const getData = await this.getDataRepository.getData();
+      const search = await searchURL(this.getDataRepository, params);
 
-      if (getData.some((data) => data.url === params.body?.url)) {
+      if (search) {
         return {
           statusCode: 400,
           body: "URL already exists",
         };
       }
-
       const dataParams = ["url", "name", "description"];
 
       for (const param of dataParams) {
