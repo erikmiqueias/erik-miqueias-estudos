@@ -20,8 +20,12 @@ async function routes(app: express.Application) {
   });
 
   app.post("/data", async (req, res) => {
+    const getDataRepository = new MongoGetDataRepository();
     const postDataRepository = new MongoPostDataRepository();
-    const postDataController = new MongoPostDataController(postDataRepository);
+    const postDataController = new MongoPostDataController(
+      postDataRepository,
+      getDataRepository
+    );
 
     const { body, statusCode } = await postDataController.handle({
       body: req.body,
